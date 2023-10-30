@@ -4,11 +4,9 @@
         <meta charset="UTF-8">
         <title>Cadastrar usuário</title>
 
-        <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-        <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-        <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+        <link href="css/maxcdn.bootstrapcdn.com_bootstrap_3.4.1_css_bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/ajax.googleapis.com_ajax_libs_jquery_3.6.4_jquery.min.js" type="text/javascript"></script>
+        <script src="js/maxcdn.bootstrapcdn.com_bootstrap_3.4.1_js_bootstrap.min.js" type="text/javascript"></script>
         
         <link rel="stylesheet" type="text/css" href="estiloLoginCadastro.css">
     </head>
@@ -62,18 +60,13 @@
                         <label for="descricao">Senha:</label>
                         <input type="password" id="password" value="<?php echo @(isset($usrObject) ? $usrObject->getPassword() : '') ?>" name="password" required="" placeholder="Crie uma senha">
 
-                        <input type="submit" class="btn btn-danger" value="Salvar informações">
+                        <input type="submit" class="btn" value="Salvar informações">
                     </form>
                 </div>
 
             </div>
 
             <div class="col-md-4"></div>
-        </div>
-
-
-
-        <div class="col-md-4"></div>
 
 
     </body>

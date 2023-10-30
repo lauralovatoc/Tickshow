@@ -46,7 +46,7 @@
                         </div>
                         
                         <a href="/">Esqueceu a senha?</a>
-                        <input type="submit" value="Entrar" class="btn">
+                        <input type="submit" class="btn" value="Entrar">
                         
                         <?php
                         //para verificar senha/email
