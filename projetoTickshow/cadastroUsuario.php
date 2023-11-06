@@ -15,7 +15,7 @@
             <img src="" style="width:10%">
         </div>-->
 
-        <br><br><br><br><br><br>
+        <br><br><br><br>
 
         <div class="row">
             <div class="col-md-4"> </div>
@@ -51,14 +51,17 @@
                         
                         <input type="hidden" name="id" value="<?php echo @(isset($usrObject) ? $usrObject->getId() : '') ?>">
 
-                        <label for="nome">Email:</label>
-                        <input type="email" value="<?php echo @(isset($usrObject) ? $usrObject->getEmail() : '') ?>" name="user" required="" placeholder="Insira seu email">
-
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" value="<?php echo @(isset($usrObject) ? $usrObject->getEmail() : '') ?>" name="email" required="" placeholder="Insira seu email">
+                       
                         <label for="nome">Nome:</label>
-                        <input type="text" value="<?php echo @(isset($usrObject) ? $usrObject->getNome() : '') ?>" name="nome" required="" placeholder="Insira seu nome">
+                        <input type="text" id="nome" value="<?php echo @(isset($usrObject) ? $usrObject->getNome() : '') ?>" name="nome" required="" placeholder="Insira seu nome">
                         
-                        <label for="descricao">Senha:</label>
-                        <input type="password" id="password" value="<?php echo @(isset($usrObject) ? $usrObject->getPassword() : '') ?>" name="password" required="" placeholder="Crie uma senha">
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" value="<?php echo @(isset($usrObject) ? $usrObject->getTelefone() : '') ?>" name="telefone" required="" placeholder="Insira seu número de telefone">
+                        
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" value="<?php echo @(isset($usrObject) ? $usrObject->getSenha() : '') ?>" name="senha" required="" placeholder="Crie uma senha">
 
                         <input type="submit" class="btn" value="Salvar informações">
                     </form>

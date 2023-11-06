@@ -3,58 +3,34 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
         <title>Tickshow!</title>
+        
+        <link href="css/maxcdn.bootstrapcdn.com_bootstrap_3.4.1_css_bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/ajax.googleapis.com_ajax_libs_jquery_3.6.4_jquery.min.js" type="text/javascript"></script>
+        <script src="js/maxcdn.bootstrapcdn.com_bootstrap_3.4.1_js_bootstrap.min.js" type="text/javascript"></script>
 
-        <style>
-            body{
-                background-image: url(img/capamulti.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                max-height: 80px;
-            }
-
-            .logo {
-                position: relative;
-                z-index: 2;
-                height: 90px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .logo img {
-                width: 100px;
-                position: absolute;
-                top: -10px;
-                left: 3px;
-            }
-            .elemento{
-                width: 100px;
-                position: relative;
-                top: 10px;
-                left: 10px;
-                z-index: 2;
-                height: 90px;
-                display: flex;
-                justify-content: left;
-                align-items: left;
-            }
-
-        </style>
+        <link href="estiloHomePage.css" rel="stylesheet" type="text/css"/>
+       
     </head>
     <body>
-        <header>
-            
-            <div class="logo">
-                <a href="#"><img src="img/logotick.png" alt="logo"/></a>  
-            <a href="#" class="elemento">Inicio</a>
+        <div class="header">
+            <div class="navbar">
+                <img class="logo" src="">
+                
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                </ul>
             </div>
-        </header>
-        <div class="body">
-            
+        </div>
+        
+        <div class="conteudo">
+            <h1>CONFIRA EVENTOS</h1>
+            <div>
+                <button type="button">Explorar</button>
+            </div>
         </div>
     </body>
 </html>
