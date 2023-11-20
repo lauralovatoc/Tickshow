@@ -23,7 +23,7 @@
             <div class="col-md-4">
 
                 <div class="blocoLogin">
-                    <form method="post" action="controller/usuarioController.php" class="formLogin">
+                    <form method="post" action="controller/usrController.php" class="formLogin">
 
                         <?php
                         if ($_REQUEST) {
@@ -37,7 +37,7 @@
                                 echo '<span>Erro:</spam>Ocorreu um erro';
                                 echo '</div>';
                             } else if ($cod == 'edit') {
-                                require_once './controller/usuarioController.php';
+                                require_once './controller/usrController.php';
 
                                 $id = $_REQUEST['id'];
                                 $usrObject = loadById($id);
@@ -50,12 +50,12 @@
                         <p>Preencha os campos abaixo com seus dados</p>
                         
                         <input type="hidden" name="id" value="<?php echo @(isset($usrObject) ? $usrObject->getId() : '') ?>">
-
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" value="<?php echo @(isset($usrObject) ? $usrObject->getEmail() : '') ?>" name="email" required="" placeholder="Insira seu email">
-                       
+                        
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" value="<?php echo @(isset($usrObject) ? $usrObject->getNome() : '') ?>" name="nome" required="" placeholder="Insira seu nome">
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" value="<?php echo @(isset($usrObject) ? $usrObject->getEmail() : '') ?>" name="email" required="" placeholder="Insira seu email">
                         
                         <label for="telefone">Telefone:</label>
                         <input type="text" id="telefone" value="<?php echo @(isset($usrObject) ? $usrObject->getTelefone() : '') ?>" name="telefone" required="" placeholder="Insira seu número de telefone">

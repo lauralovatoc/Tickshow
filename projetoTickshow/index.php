@@ -48,7 +48,7 @@
                             <label for="lembrar" class="form-check-label" style="color:black">Lembre de mim</label>
                         </div>
 
-                        <a href="cadastroEvento.php">Cadastrar evento</a>
+                        <a href="cadastroUsuario.php">Cadastrar-se</a>
                         <input type="submit" value="Entrar" class="btn">
                     </form>
                 </div>
