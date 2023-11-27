@@ -11,13 +11,13 @@ if ($_POST) {
     $usr->setId($_POST['id']); 
 
     if ($total == 1) {
-        if (empty($usr->getId_usuario())) {
-            header('location:../cadastrarUsuario.php?cod=success');
+        if (empty($usr->getId())) {
+            header('location:../cadastroUsuario.php?cod=success');
         } else {
             header('location:../listarUsuario.php?cod=success');
         }
     } else {
-        header('location:../cadastrarUsuario.php?cod=error');
+        header('location:../cadastroUsuario.php?cod=error');
     }
     
     
