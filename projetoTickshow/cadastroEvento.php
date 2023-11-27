@@ -66,6 +66,10 @@
                         <label for="add">Valor a ser adicionado por lote:</label>
                         <input type="number" id="add" value="" name="add" required="" placeholder="Insira um valor">
 
+                        <label for="url">URL da imagem escolhida:</label>
+                        <input type="text" id="url" value="" name="url" required="" placeholder="Insira um URL">
+                        
+
                         <input type="submit" class="btn" value="Salvar informações">
                     </form>
                 </div>

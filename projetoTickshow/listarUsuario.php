@@ -50,12 +50,6 @@
                         echo $usr['telefone'];
                     echo '</td>';
 
-                    //Operações
-                    echo '<td>';
-                            echo '<a class="btn btn-primary" href="cadastrarUsuario.php?cod=edit&&id='.$usr['id'].'">Editar</a>';
-                            echo ' ';
-                            echo '<a class="btn btn-danger" href="./controller/usrController.php?cod=del&&id='.$usr['id'].'">Excluir</a>';
-                    echo '</td>';
                 echo '</tr>';
             }
 

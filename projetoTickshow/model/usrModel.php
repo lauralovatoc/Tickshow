@@ -58,7 +58,6 @@ class usrModel {
 
     //Métodos especialistas
     public function loadAll() {
-
         $db = new ConexaoMysql();
         $db->Conectar();
 
@@ -66,12 +65,10 @@ class usrModel {
         $resultList = $db->Consultar($sql);
 
         $db->Desconectar();
-
         return $resultList;
     }
 
     public function loadById($id) {
-
         $db = new ConexaoMysql();
         $db->Conectar();
 
@@ -81,64 +78,28 @@ class usrModel {
         //verifica se retornou um registro do database
         if ($db->total == 1) {
             foreach ($resultList as $value) {
-                $this->id_usuario = $value['id'];
+                $this->id = $value['id'];
                 $this->nome = $value['nome'];
                 $this->email = $value['email'];
                 $this->senha = $value['senha'];
-                $this->telefone =$value['telefone'];
+                $this->telefone = $value['telefone'];
             }
         }
         $db->Desconectar();
-
         return $resultList;
     }
 
     public function insert() {
-     
         $db = new ConexaoMysql();
         $db->Conectar();
 
         $sql = 'INSERT INTO usuarios '
                 . 'values(0,"' . $this->nome . '",'
-                . $this->email . '",'
-                . $this->senha . '",'
+                . '"' .$this->email . '",'
+                . '"' .$this->senha . '",'
                 . '"' . $this->telefone . '")';
 
         $db->Executar($sql);
-
-        $db->Desconectar();
-
-        return $db->total;
-    }
-
-    public function update() {
-
-        $db = new ConexaoMysql();
-        $db->Conectar();
-
-        $sql = 'UPDATE usuarios SET '
-                . 'nome="'.$this->nome.'",'
-                . 'email="'.$this->email.'",'
-                . 'senha="'.$this->senha.'",'
-                . 'senha="'.$this->telefone.'",'
-                . 'WHERE id = '.$this->id;
-
-        $db->Executar($sql);
-
-        $db->Desconectar();
-
-        return $db->total;
-    }
-    
-    public function delete() {
-  
-        $db = new ConexaoMysql();
-        $db->Conectar();
-
-        $sql = 'DELETE FROM usuarios WHERE id='.$this->id;
-      
-        $db->Executar($sql);
-
         $db->Desconectar();
 
         return $db->total;
@@ -148,11 +109,12 @@ class usrModel {
         $db = new ConexaoMysql();
         $db->Conectar();
 
-        $sql = "SELECT * from usuarios where email = '$email' and senha='$senha'";
+        $sql = "SELECT * FROM usuarios where email = '$email' and senha= '$senha'";
 
         $db->Consultar($sql);
+        $result = $db->total;
 
-        if($db->total>=1){
+        if($result >= 1){
             @session_start();
             $_SESSION['login'] = $email;
 
@@ -167,16 +129,28 @@ class usrModel {
                 }
             }
 
-
             header('location:../home.php');
 
         } else {
+
             header('location: ../index.php?cod=171');
         }
 
-
         $db->Desconectar();
 
+    }
+
+
+    public function cadastro($email_registrado, $senha_registrada){
+        $db = new ConexaoMysql();
+        $db->Conectar();
+        $sql = "INSERT INTO usuarios (email,senha) values ('$email_registrado', '$senha_registrada')";
+        $db->Executar($sql);
+
+        header('location: ../index.php');
+        
+        $db->Desconectar();
+        
     }
 
 }

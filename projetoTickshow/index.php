@@ -49,7 +49,28 @@
                         </div>
 
                         <a href="cadastroUsuario.php">Cadastrar-se</a>
-                        <input type="submit" value="Entrar" class="btn">
+
+                        <input type="submit" value="Entrar" class="btn btn-danger" >
+
+                        <div class="d-grid">
+                        <?php
+                        //para verificar senha ou email
+
+                         @$cod = $_REQUEST['cod'];
+                        if (isset($cod)) {
+                            if ($cod == '171') {  //codigo caso os dados estejam errados => loginController
+                                echo ('<br><div class="alert alert-danger">');
+                                echo ('Verifique usuário ou senha.');
+                                echo ('</div>');
+                            } else if ($cod == '172') {
+                                echo ('<br><div class="alert alert-warning">');
+                                echo ('Sua sessão expirou. Realize o login novamente.');
+                                echo ('</div>');
+                            }
+                        }
+                        ?>
+                        </div>
+
                     </form>
                 </div>
             </div>

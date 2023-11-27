@@ -10,14 +10,8 @@ if ($_POST) {
 
     $usr->setId($_POST['id']); 
 
-    if (empty($usr->getId())) {
-        $total = $usr->insert();
-    } else {
-        $total = $usr->update();
-    }
-    
     if ($total == 1) {
-        if (empty($usr->getId())) {
+        if (empty($usr->getId_usuario())) {
             header('location:../cadastrarUsuario.php?cod=success');
         } else {
             header('location:../listarUsuario.php?cod=success');
@@ -33,14 +27,6 @@ if ($_POST) {
         require_once '../model/usrModel.php';
         $usr = new usrModel();
 
-        if (isset($_REQUEST['id']) && !empty($_REQUEST['id'])) {
-
-            $usr->setId_usuario($_REQUEST['id']);
-            $total = $usr->delete();
-            if ($total == 1) {
-                header('location:../listarUsuario.php?cod=success');
-            }
-        }
     }
 } else {
     loadAll();
