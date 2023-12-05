@@ -25,15 +25,15 @@
 
 
                 <div class="blocoLogin">
-                    <form method="post" class="formLogin" method="controller/loginController.php">
+                    <form method="post" class="formLogin" method="./controller/loginController.php">
                         <h2 style="color:black">Login</h2>
                         <p>Digite os dados de login nos campos abaixo.</p>
 
                         <label for="email">Email:</label>
-                        <input type="email" placeholder="Insira seu email" required="">
+                        <input type="email" placeholder="Insira seu email" required="" nome="email">
 
                         <label for="password">Senha:</label>
-                        <input type="password" placeholder="Insira sua senha" required="">
+                        <input type="password" placeholder="Insira sua senha" required="" nome="senha">
 
                         <div>
                             <?php
@@ -50,7 +50,7 @@
 
                         <a href="cadastroUsuario.php">Cadastrar-se</a>
 
-                        <input type="submit" value="Entrar" class="btn btn-danger" >
+                        <input type="submit" value="Entrar" class="btn btn-danger" name="login">
 
                         <div class="d-grid">
                         <?php

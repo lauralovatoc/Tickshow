@@ -1,6 +1,7 @@
 <?php
 
 if ($_POST) {
+
     require_once '../model/usrModel.php';
     $usr = new usrModel();
     $usr->setNome($_POST['nome']);
@@ -8,18 +9,10 @@ if ($_POST) {
     $usr->setSenha($_POST['senha']);
     $usr->setTelefone($_POST['telefone']);
 
-    $usr->setId($_POST['id']); 
-
-    if ($total == 1) {
-        if (empty($usr->getId())) {
-            header('location:../cadastroUsuario.php?cod=success');
-        } else {
-            header('location:../listarUsuario.php?cod=success');
-        }
-    } else {
-        header('location:../cadastroUsuario.php?cod=error');
-    }
-    
+    if(isset($_POST['cadastrar'])){
+        $usr->cadastro();
+        header('location:../index.php');
+    } 
     
 } else if ($_REQUEST) {
     if (isset($_REQUEST['cod']) && $_REQUEST['cod'] == 'del') {

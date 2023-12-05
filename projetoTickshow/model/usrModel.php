@@ -4,11 +4,11 @@ require_once 'ConexaoMysql.php';
 
 class usrModel {
     
-    protected $id;
-    protected $nome;
-    protected $email;
-    protected $senha;
-    protected $telefone;
+    public  $id;
+  public  $nome;
+    public $email;
+  public  $senha;
+    public $telefone;
 
     public function __construct() {
         //vazio
@@ -61,7 +61,7 @@ class usrModel {
         $db = new ConexaoMysql();
         $db->Conectar();
 
-        $sql = 'SELECT * FROM usuarios';
+        $sql = 'SELECT * FROM usuario';
         $resultList = $db->Consultar($sql);
 
         $db->Desconectar();
@@ -72,7 +72,7 @@ class usrModel {
         $db = new ConexaoMysql();
         $db->Conectar();
 
-        $sql = 'SELECT * FROM usuarios where id =' . $id;
+        $sql = 'SELECT * FROM usuario where id =' . $id;
         $resultList = $db->Consultar($sql);
 
         //verifica se retornou um registro do database
@@ -89,27 +89,11 @@ class usrModel {
         return $resultList;
     }
 
-    public function insert() {
-        $db = new ConexaoMysql();
-        $db->Conectar();
-
-        $sql = 'INSERT INTO usuarios '
-                . 'values(0,"' . $this->nome . '",'
-                . '"' .$this->email . '",'
-                . '"' .$this->senha . '",'
-                . '"' . $this->telefone . '")';
-
-        $db->Executar($sql);
-        $db->Desconectar();
-
-        return $db->total;
-    }
-
     public function login($email,$senha){
         $db = new ConexaoMysql();
         $db->Conectar();
 
-        $sql = "SELECT * FROM usuarios where email = '$email' and senha= '$senha'";
+        $sql = "SELECT * FROM usuario where email = '$email' and senha= '$senha'";
 
         $db->Consultar($sql);
         $result = $db->total;
@@ -141,13 +125,12 @@ class usrModel {
     }
 
 
-    public function cadastro($email_registrado, $senha_registrada){
+    public function cadastro(){
+
         $db = new ConexaoMysql();
         $db->Conectar();
-        $sql = "INSERT INTO usuarios (email,senha) values ('$email_registrado', '$senha_registrada')";
+        $sql = "INSERT INTO usuario (nome,email,senha,telefone) values ('$this->nome','$this->email','$this->senha','$this->telefone')";
         $db->Executar($sql);
-
-        header('location: ../index.php');
         
         $db->Desconectar();
         

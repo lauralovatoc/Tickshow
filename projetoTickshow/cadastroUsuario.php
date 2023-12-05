@@ -23,27 +23,7 @@
             <div class="col-md-4">
 
                 <div class="blocoLogin">
-                    <form method="post" action="controller/usrController.php" class="formLogin">
-
-                        <?php
-                        if ($_REQUEST) {
-                            $cod = $_REQUEST['cod'];
-                            if ($cod == 'success') {
-                                echo '<div class="alert alert-success">';
-                                echo 'Registro inserido com sucesso';
-                                echo '</div>';
-                            } else if ($cod == 'error') {
-                                echo '<div class="alert alert-danger">';
-                                echo '<span>Erro:</spam>Ocorreu um erro';
-                                echo '</div>';
-                            } else if ($cod == 'edit') {
-                                require_once './controller/usrController.php';
-
-                                $id = $_REQUEST['id'];
-                                $usrObject = loadById($id);
-                            }
-                        }
-                        ?>
+                    <form method="post" action="./controller/usrController.php" class="formLogin">
 
 
                         <h1>Cadastrar-se</h1>
@@ -52,18 +32,18 @@
                         <input type="hidden" name="id" value="<?php echo @(isset($usrObject) ? $usrObject->getId() : '') ?>">
                         
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" value="<?php echo @(isset($usrObject) ? $usrObject->getNome() : '') ?>" name="nome" required="" placeholder="Insira seu nome">
+                        <input type="text" id="nome"  name="nome" required="" placeholder="Insira seu nome">
                         
                         <label for="email">Email:</label>
-                        <input type="email" id="email" value="<?php echo @(isset($usrObject) ? $usrObject->getEmail() : '') ?>" name="email" required="" placeholder="Insira seu email">
+                        <input type="email" id="email" name="email" required="" placeholder="Insira seu email">
                         
                         <label for="telefone">Telefone:</label>
-                        <input type="text" id="telefone" value="<?php echo @(isset($usrObject) ? $usrObject->getTelefone() : '') ?>" name="telefone" required="" placeholder="Insira seu número de telefone">
+                        <input type="text" id="telefone" name="telefone" required="" placeholder="Insira seu número de telefone">
                         
                         <label for="senha">Senha:</label>
-                        <input type="password" id="senha" value="<?php echo @(isset($usrObject) ? $usrObject->getSenha() : '') ?>" name="senha" required="" placeholder="Crie uma senha">
+                        <input type="password" id="senha" name="senha" required="" placeholder="Crie uma senha">
 
-                        <input type="submit" class="btn" value="Salvar informações">
+                        <input type="submit" name= "cadastrar" class="btn" value="Salvar informações">
                     </form>
                 </div>
 
