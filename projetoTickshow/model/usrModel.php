@@ -5,9 +5,9 @@ require_once 'ConexaoMysql.php';
 class usrModel {
     
     public  $id;
-  public  $nome;
+    public  $nome;
     public $email;
-  public  $senha;
+    public  $senha;
     public $telefone;
 
     public function __construct() {
@@ -98,31 +98,10 @@ class usrModel {
         $db->Consultar($sql);
         $result = $db->total;
 
-        if($result >= 1){
-            @session_start();
-            $_SESSION['login'] = $email;
-
-            if(isset($lembrar)){
-                if($lembrar == 1){
-                    setcookie('email', $email, time() + (86400 * 30), "/"); 
-                }
-            }else{
-                if (isset($_COOKIE['email'])) {
-                    //destruir o cookie
-                    setcookie("email", "", time()  - (172800 * 30), "/");
-                }
-            }
-
-            header('location:../home.php');
-
-        } else {
-
-            header('location: ../index.php?cod=171');
-        }
-
         $db->Desconectar();
-
+        return $result;
     }
+
 
 
     public function cadastro(){

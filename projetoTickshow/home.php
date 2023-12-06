@@ -152,7 +152,13 @@
         <div id="band" class="container text-center">
             <h3>TickShow</h3>
             <p><em>Queremos a melhor experiência para nossos usuários!</em></p>
-            <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Tickshow é um projeto desenvolvido para venda de ingressos online, onde
+                os usuários podem acessar à diversos eventos de diferentes categorias e podem
+                comprar o ingresso de forma virtual. Nós buscamos trazer os eventos que estão em alta 
+                e sempre atualizar as novidades para vocês! Esperamos que tenham uma boa experiência com
+                o site e, caso haja alguma reclamação ou sugestão, sintam-se à vontade para entrar em 
+                contato com a equipe por meio da Central de Ajuda. 
+                </p>
             <br>
         </div>
 
