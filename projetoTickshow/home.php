@@ -38,7 +38,7 @@
             }
             .carousel-inner img {
                 width: 100%;
-                height: 100%;/* Set width to 100% */
+                height: 100%;
                 margin: auto;
             }
             .carousel-caption h3 {
@@ -46,7 +46,7 @@
             }
             @media (max-width: 600px) {
                 .carousel-caption {
-                    display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+                    display: none;
                 }
             }
             .bg-1 {
@@ -88,78 +88,11 @@
                 background-color: #fff;
                 color: #000;
             }
-            .modal-header, h4, .close {
-                background-color: #4a1564;
-                color: #fff !important;
-                text-align: center;
-                font-size: 30px;
-            }
-            .modal-header, .modal-body {
-                padding: -10px 10px;
-            }
-            .nav-tabs li a {
-                color: #777;
-            }
-            .navbar {
-                font-family: Montserrat, sans-serif;
-                margin-bottom: 0;
-                background-color: #4a1564;
-                border: 0;
-                font-size: 14px !important;
-                letter-spacing: 5px;
-            }
-            .navbar li a, .navbar .navbar-brand {
-                color: #fff !important;
-            }
-            .navbar-nav li a:hover {
-                color: #fff !important;
-            }
-            .navbar-nav li.active a {
-                color: #fff !important;
-                background-color: white !important;
-            }
-            .navbar-default .navbar-toggle {
-                border-color: transparent;
-            }
-            .open .dropdown-toggle {
-                color: #fff;
-                background-color: #555 !important;
-            }
-            .dropdown-menu li a {
-                color: #000 !important;
-            }
-            .dropdown-menu li a:hover {
-                background-color: red !important;
-            }
-            footer {
-                background-color: #2d2d30;
-                color: #f5f5f5;
-                padding: 32px;
-            }
-            footer a {
-                color: #f5f5f5;
-            }
-            footer a:hover {
-                color: #777;
-                text-decoration: none;
-            }
             .form-control {
                 border-radius: 0;
             }
             textarea {
                 resize: none;
-            }
-            .logo {
-                position: relative;
-                z-index: 2;
-                height: 55px;
-            }
-
-            .logo img {
-                width: 100px;
-                position: absolute;
-                top:-22px;
-                left: 10px;
             }
             .item.active {
                 overflow: hidden;
@@ -177,36 +110,9 @@
         </style>
     </head>
     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-                    <div class="logo"><img src="img/logotick.png" alt=""/> </div>
-
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="home.php">Eventos</a></li>
-                        <li><a href="">Ingressos</a></li>
-                        <li><a href="index.php">Login</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mais
-                                <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Sobre</a></li>
-                                <li><a href="#">Extras</a></li>
-                                <li><a href="#">Media</a></li> 
-                            </ul>
-                        </li>
-                        <li><a href="#"><span class="fa fa-cart-plus" style="font-size:28px"></span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php
+            require_once './shared/header.php';
+        ?>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -303,7 +209,7 @@
                                     <label for="usrname"><span class="glyphicon glyphicon-user"></span>Email</label>
                                     <input type="text" class="form-control" id="usrname" placeholder="Insira seu email">
                                 </div>
-                                <button type="submit" class="btn btn-block">Pagar 
+                                <button type="submit" class="btn btn-block">Adicionar ao carrinho 
                                     <span class="glyphicon glyphicon-ok"></span>
                                 </button>
                             </form>
