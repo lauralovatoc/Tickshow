@@ -50,194 +50,98 @@
         <?php
         require_once './shared/header.php';
         ?>
-        <main class="container">
-            <div>   
-                <h3>Stand Up's</h3>
-                <div class="row">
 
-                    <div class="col-sm-3">
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading" class="cor">Olirrô: O Pintor</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/comedia/oPintor.jpg" style="width:100%"  alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Junior Moraes: Pronto Falei!</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/comedia/prontoFalei.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Viver de Comédia</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/comedia/semInscritos.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Thiago Ventura</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/comedia/thiagoVentura.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                </div>
+        <main class="container">
+        <div>        
+        <?php
+                require_once 'controller/eventosController.php';
+                $result = loadByCat(1);
+
+                echo('<h3>Stand Up`s:</h3>');
+                echo('<div class="row">');
+
+                foreach($result as $data){
+                    echo ('<div class="col-sm-3">');
+                    echo ('<div class="panel" style="background-color: #ac58aa;">');
+                    echo ('<div class="panel-heading" class="cor">'.$data['nome'].'</div>');
+                    echo ('<div class="panel-body"style="background-color: #fff;"><img src="'.$data['img'].'" style="height:90px"></div>');
+                    echo ('<div class="panel-footer" style="background-color: #ac58aa;"></div>');
+                    echo('<button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>');
+                    echo('</div></div>');
+                }
+                echo('</div>');
+                echo('<br>');
+
+                $result = loadByCat(2);
+
+                echo('<h3>Shows:</h3>');
+                echo('<div class="row">');
+
+                foreach($result as $data){
+                    echo ('<div class="col-sm-3">');
+                    echo ('<div class="panel" style="background-color: #ac58aa;">');
+                    echo ('<div class="panel-heading" class="cor">'.$data['nome'].'</div>');
+                    echo ('<div class="panel-body"style="background-color: #fff;"><img src="'.$data['img'].'" style="height:90px"></div>');
+                    echo ('<div class="panel-footer" style="background-color: #ac58aa;"></div>');
+                    echo('<button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>');
+                    echo('</div></div>');
+                }
+                echo('</div>');
+                echo('<br>');
+
+                $result = loadByCat(3);
+
+                echo('<h3>Para crianças:</h3>');
+                echo('<div class="row">');
+
+                foreach($result as $data){
+                    echo ('<div class="col-sm-3">');
+                    echo ('<div class="panel" style="background-color: #ac58aa;">');
+                    echo ('<div class="panel-heading" class="cor">'.$data['nome'].'</div>');
+                    echo ('<div class="panel-body"style="background-color: #fff;"><img src="'.$data['img'].'" style="height:90px"  alt="Image"></div>');
+                    echo ('<div class="panel-footer" style="background-color: #ac58aa;"></div>');
+                    echo('<button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>');
+                    echo('</div></div>');
+                }
+                echo('</div>');
+                echo('<br>');
+
+                $result = loadByCat(4);
+
+                echo('<h3>Teatros:</h3>');
+                echo('<div class="row">');
+
+                foreach($result as $data){
+                    echo ('<div class="col-sm-3">');
+                    echo ('<div class="panel" style="background-color: #ac58aa;">');
+                    echo ('<div class="panel-heading" class="cor">'.$data['nome'].'</div>');
+                    echo ('<div class="panel-body"style="background-color: #fff;"><img src="'.$data['img'].'" style="height:90px"  alt="Image"></div>');
+                    echo ('<div class="panel-footer" style="background-color: #ac58aa;"></div>');
+                    echo('<button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>');
+                    echo('</div></div>');
+                }
+                echo('</div>');
+                echo('<br>');
+
+                $result = loadByCat(5);
+
+                echo('<h3>Festas:</h3>');
+                echo('<div class="row">');
+
+                foreach($result as $data){
+                    echo ('<div class="col-sm-3">');
+                    echo ('<div class="panel" style="background-color: #ac58aa;">');
+                    echo ('<div class="panel-heading" class="cor">'.$data['nome'].'</div>');
+                    echo ('<div class="panel-body"style="background-color: #fff;"><img src="'.$data['img'].'" style="height:90px"  alt="Image"></div>');
+                    echo ('<div class="panel-footer" style="background-color: #ac58aa;"></div>');
+                    echo('<button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>');
+                    echo('</div></div>');
+                }
+                echo('</div>');
+                echo('<br>');
+                ?>
             </div>
             <br>
-            <div>
-                <h3>Shows</h3>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Numanice</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/shows/ludmilla.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Maglore - Turnê do disco "V"</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/shows/maglore.png" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Pablo Vittar - After</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/shows/pabloVittar.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Wesley Safadão e Bell Marques</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/shows/wesleySafadao.png" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3>Para crianças</h3>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Super Mario</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/infantil/mario.png" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">O Natal mágico do Mickey</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/infantil/mickey.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Vem Sonhar - Patati e Patata</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/infantil/patatiPatata.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Patrulha Canina - O musical</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/infantil/patrulha.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3>Teatros</h3>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">A Megera Domada</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/teatro/aMegera.png" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Aladdin</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/teatro/aladdin.png" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Cinderela</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/teatro/cinderela.png" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Flávia Reis - Neurótica</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/teatro/neurotica.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3>Festas</h3>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Aurora Verse</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/festas/auroraVerse.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Neon Party</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/festas/neonParty.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Noite na Gaiola</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/festas/noiteNaGaiola.png" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-3"> 
-                        <div class="panel" style="background-color: #ac58aa;">
-                            <div class="panel-heading">Revoada</div>
-                            <div class="panel-body"style="background-color: #fff;"><img src="img/eventos/festas/revoada.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer" style="background-color: #ac58aa;"></div>
-                            <button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                </div>
-            </div><br>
         </main>
         <footer class="text-center" style="background-color: #4a1564;">
             <a class="up-arrow" href="eventos.php" data-toggle="tooltip" title="TO TOP">
