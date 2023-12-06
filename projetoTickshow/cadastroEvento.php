@@ -23,7 +23,7 @@
             <div class="col-md-4">
 
                 <div class="blocoLogin">
-                    <form method="post" action="controller/eventoController.php" class="formLogin">
+                    <form method="post" action="./controller/eventosController.php" class="formLogin">
 
                         <?php
                         if ($_REQUEST) {
@@ -37,7 +37,7 @@
                                 echo '<span>Erro:</spam>Ocorreu um erro';
                                 echo '</div>';
                             } else if ($cod == 'edit') {
-                                require_once './controller/eventoController.php';
+                                require_once './controller/eventosController.php';
 
                                 $id = $_REQUEST['id'];
                                 $usrObject = loadById($id);
@@ -53,24 +53,24 @@
 
                         <label for="nome">Nome do evento:</label>
                         <input type="text" id="nome" value="" name="nome" required="" placeholder="Insira o nome">
-                       
-                        <label for="descricao">Descrição:</label>
-                        <input type="text" id="descricao" value="" name="descricao" required="" placeholder="Insira uma descrição do evento">
                         
+                        <label for="loteUm">Quantidade de ingressos:</label>
+                        <input type="number" id="quant_ing" value="" name="quant_ing" required="" placeholder="Insira uma quantidade">
+
                         <label for="loteUm">Valor do primeiro lote:</label>
-                        <input type="number" id="quant" value="" name="loteUm" required="" placeholder="Insira um valor">
+                        <input type="number" id="valor_Plote" value="" name="valor_Plote" required="" placeholder="Insira um valor">
                         
                         <label for="quant">Quantidade de lotes:</label>
-                        <input type="number" id="quant" value="" name="quant" required="" placeholder="Insira uma quantidade">
+                        <input type="number" id="quant_lotes" value="" name="quant_lotes" required="" placeholder="Insira uma quantidade">
                         
                         <label for="add">Valor a ser adicionado por lote:</label>
-                        <input type="number" id="add" value="" name="add" required="" placeholder="Insira um valor">
+                        <input type="number" id="acrescentar_valor" value="" name="acrescentar_valor" required="" placeholder="Insira um valor">
 
                         <label for="url">URL da imagem escolhida:</label>
-                        <input type="text" id="url" value="" name="url" required="" placeholder="Insira um URL">
+                        <input type="text" id="img" value="" name="img" required="" placeholder="Insira um URL">
                         
 
-                        <input type="submit" class="btn" value="Salvar informações">
+                        <input type="submit" name="cadastrar" class="btn" value="Salvar informações">
                     </form>
                 </div>
 

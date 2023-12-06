@@ -55,6 +55,23 @@
         <div>        
         <?php
                 require_once 'controller/eventosController.php';
+                $result = loadByCat(6);
+
+                echo('<h3>Novidades:</h3>');
+                echo('<div class="row">');
+
+                foreach($result as $data){
+                    echo ('<div class="col-sm-3">');
+                    echo ('<div class="panel" style="background-color: #ac58aa;">');
+                    echo ('<div class="panel-heading" class="cor">'.$data['nome'].'</div>');
+                    echo ('<div class="panel-body"style="background-color: #fff;"><img src="'.$data['img'].'" style="height:90px"></div>');
+                    echo ('<div class="panel-footer" style="background-color: #ac58aa;"></div>');
+                    echo('<button class="btn" data-toggle="modal" data-target="#myModal">Adicionar ao Carrinho</button>');
+                    echo('</div></div>');
+                }
+                echo('</div>');
+                echo('<br>');
+
                 $result = loadByCat(1);
 
                 echo('<h3>Stand Up`s:</h3>');
