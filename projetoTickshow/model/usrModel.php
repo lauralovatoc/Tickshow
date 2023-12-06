@@ -93,25 +93,47 @@ class usrModel {
         $db = new ConexaoMysql();
         $db->Conectar();
 
-        $sql = "SELECT * FROM usuario where email = '$email' and senha= '$senha'";
+        $sql = "SELECT * FROM usuarios where email = '$email' and senha = '$senha' ";
 
         $db->Consultar($sql);
         $result = $db->total;
 
-        $db->Desconectar();
-        return $result;
-    }
+        if($result = 1 ){
+            @session_start();
+            $_SESSION['login'] = $email;
 
+            if(isset($lembrar)){
+                if($lembrar == 1){
+                    setcookie('email', $email, time() + (86400 * 30), "/"); 
+                }
+            }else{
+                if (isset($_COOKIE['email'])) {
+                    //destruir o cookie
+                    setcookie("email", "", time()  - (172800 * 30), "/");
+                }
+            }
+
+            header('location:../home.php');
+
+        } else {
+        
+            header('location: ../index.php?cod=171');
+        }
+
+     
+
+    }
 
 
     public function cadastro(){
 
         $db = new ConexaoMysql();
         $db->Conectar();
-        $sql = "INSERT INTO usuario (nome,email,senha,telefone) values ('$this->nome','$this->email','$this->senha','$this->telefone')";
-        $db->Executar($sql);
+        $sql = "INSERT INTO usuarios (nome,email,senha,telefone) values ('.$this->nome.','.$this->email.','.$this->senha.','.$this->telefone.')";
+         $db->Executar($sql);
         
-        $db->Desconectar();
+       
+       header('location:../index.php?sucess');
         
     }
 

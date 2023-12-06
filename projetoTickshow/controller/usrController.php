@@ -4,14 +4,14 @@ if ($_POST) {
 
     require_once '../model/usrModel.php';
     $usr = new usrModel();
-    $usr->setNome($_POST['nome']);
-    $usr->setEmail($_POST['email']);
-    $usr->setSenha($_POST['senha']);
-    $usr->setTelefone($_POST['telefone']);
+    $usr->nome = $_POST['nome'];
+    $usr->email = $_POST['email'];
+    $usr->senha = $_POST['senha'];
+    $usr->telefone = $_POST['telefone'];
 
     if(isset($_POST['cadastrar'])){
         $usr->cadastro();
-        header('location:../index.php');
+  
     } 
     
 } else if ($_REQUEST) {

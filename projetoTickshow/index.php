@@ -25,15 +25,28 @@
 
 
                 <div class="blocoLogin">
-                    <form method="post" class="formLogin" method="./controller/loginController.php">
+                    <form method="post" class="formLogin" action="./controller/loginController.php">
                         <h2 style="color:black">Login</h2>
                         <p>Digite os dados de login nos campos abaixo.</p>
-                        
+
                         <label for="email">Email:</label>
                         <input type="email" placeholder="Insira seu email" required="" name="email">
 
                         <label for="password">Senha:</label>
                         <input type="password" placeholder="Insira sua senha" required="" name="senha">
+
+                        <div>
+                            <?php
+                            if (isset($_COOKIE['email'])) {
+                                echo ('<input type="checkbox" class="form-check-input" id="lembrar" 
+                           name="lembrar" checked value="1">');
+                            } else {
+                                echo ('<input type="checkbox" class="form-check-input" id="lembrar" 
+                           name="lembrar" value="1">');
+                            }
+                            ?>
+                            <label for="lembrar" class="form-check-label" style="color:black">Lembre de mim</label>
+                        </div>
 
                         <a href="cadastroUsuario.php">Cadastrar-se</a>
 
@@ -42,6 +55,7 @@
                         <div class="d-grid">
                         <?php
                         //para verificar senha ou email
+
                          @$cod = $_REQUEST['cod'];
                         if (isset($cod)) {
                             if ($cod == '171') {  //codigo caso os dados estejam errados => loginController
