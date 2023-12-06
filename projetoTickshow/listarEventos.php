@@ -22,9 +22,7 @@
         <thead>
             <th>Nome</th>
             <th>Quantidade Ingressos</th>
-            <th>Quantidade Lotes</th>
-            <th>Valor Primeiro lote</th>
-            <th>Valor acrescentado</th>
+            <th>Valor</th>
             <th>Imagem</th>
             <th>Categoria</th>
         </thead>
@@ -46,15 +44,7 @@
                     echo '</td>';
                     
                     echo '<td>';
-                        echo $result['quant_lotes'];
-                    echo '</td>';
-                    
-                    echo '<td>';
-                        echo $result['valor_Plote'];
-                    echo '</td>';
-
-                    echo '<td>';
-                        echo $result['acrescentar_valor'];
+                        echo $result['valor'];
                     echo '</td>';
 
                     echo '<td>';

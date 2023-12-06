@@ -40,7 +40,7 @@
                                 require_once './controller/eventosController.php';
 
                                 $id = $_REQUEST['id'];
-                                $usrObject = loadById($id);
+                                $eventosObject = loadById($id);
                             }
                         }
                         ?>
@@ -52,25 +52,19 @@
                         <input type="hidden" name="id" value="">
 
                         <label for="nome">Nome do evento:</label>
-                        <input type="text" id="nome" value="" name="nome" required="" placeholder="Insira o nome">
+                        <input type="text" value="" name="nome" required="" placeholder="Insira o nome">
                         
                         <label for="loteUm">Quantidade de ingressos:</label>
-                        <input type="number" id="quant_ing" value="" name="quant_ing" required="" placeholder="Insira uma quantidade">
+                        <input type="number" name="quant_ing" required="" placeholder="Insira uma quantidade">
 
-                        <label for="loteUm">Valor do primeiro lote:</label>
-                        <input type="number" id="valor_Plote" value="" name="valor_Plote" required="" placeholder="Insira um valor">
-                        
-                        <label for="quant">Quantidade de lotes:</label>
-                        <input type="number" id="quant_lotes" value="" name="quant_lotes" required="" placeholder="Insira uma quantidade">
-                        
-                        <label for="add">Valor a ser adicionado por lote:</label>
-                        <input type="number" id="acrescentar_valor" value="" name="acrescentar_valor" required="" placeholder="Insira um valor">
+                        <label for="loteUm">Valor do ingresso:</label>
+                        <input type="number" name="valor" required="" placeholder="Insira um valor">
 
                         <label for="url">URL da imagem escolhida:</label>
-                        <input type="text" id="img" value="" name="img" required="" placeholder="Insira um URL">
+                        <input type="text" name="img" required="" placeholder="Insira um URL">
                         
 
-                        <input type="submit" name="cadastrar" class="btn" value="Salvar informações">
+                        <input type="submit" name="cadastrarEvento" class="btn" value="Salvar informações">
                     </form>
                 </div>
 

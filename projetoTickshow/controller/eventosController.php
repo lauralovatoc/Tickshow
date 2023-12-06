@@ -6,12 +6,10 @@ if ($_POST) {
     $evento = new eventosModel();
     $evento->nome = $_POST['nome'];
     $evento->quant_ing = $_POST['quant_ing'];
-    $evento->quant_lotes = $_POST['quant_lotes'];
-    $evento->valor_Plote = $_POST['valor_Plote'];
-    $evento->acrescentar_valor = $_POST['acresecentar_valor'];
+    $evento->valor = $_POST['valor'];
     $evento->img = $_POST['img'];
 
-    if(isset($_POST['cadastrar'])){
+    if(isset($_POST['cadastrarEvento'])){
         $evento->cadastroEvento();
   
     } 
